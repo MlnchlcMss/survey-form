@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chowking Survey</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+</head>
+<body>
+<h1> Chowking Dining Experience Survey </h1>
+<form id="ChowkingForm">
+
+<fieldset>
+  <legend>Personal Info</legend>
+
+  <label for="Fname">Full Name</label>
+  <input type="text" name="name" id="Fname" required>
+
+  <label for="Age">Age</label>
+  <input type="number" name="age" id="Age" required>
+
+  <label for="Gender">Gender</label>
+  <select name="gender" id="Gender">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Abstain</option>
+  </select>
+
+</fieldset>
+
+
+  
+ <fieldset>
+  <legend>Service Rating</legend>
+	
+  <label> How would you rate the services during your dining experience overall? (Cleaning, Counter, etc.) </label> 
+  <label><input type="radio" name="rating" value="5" required> Fantastic</label>
+  <label><input type="radio" name="rating" value="4"> Great</label>
+  <label><input type="radio" name="rating" value="3"> Good</label>
+  <label><input type="radio" name="rating" value="2"> Neutral</label>
+  <label><input type="radio" name="rating" value="1"> Bad</label>
+  <label><input type="radio" name="rating" value="0"> Horrible</label>
+  
+  
+  
+  <label> Feedback of Service:
+    <textarea name="feedback" id="feedback1" rows="3"></textarea>
+  </label>
+  
+  
+</fieldset>
+
+<fieldset>
+
+  <legend>Food Quality Rating</legend>
+
+  <label>What items did you get during your dining experience?</label>
+  <label><input type="checkbox" name="food" value="bm1" required> Breakfast Meals</label>
+  <label><input type="checkbox" name="food" value="l1"> Lauriat</label>
+  <label><input type="checkbox" name="food" value="cf"> Chao Fan</label>
+  <label><input type="checkbox" name="food" value="fc1"> Fried Chicken</label>
+  <label><input type="checkbox" name="food" value="cs1"> Chef Specials</label>
+  <label><input type="checkbox" name="food" value="cr1"> Chinese Rice Meals</label>
+  <label><input type="checkbox" name="food" value="mp1"> Mami and Pancit</label>
+  <label><input type="checkbox" name="food" value="hhd1"> Halo Halo/Desserts</label>
+
+      
+  <label>How would you rate the quality of the food served to you during your dining experience overall?</label>
+  <label><input type="radio" name="rating" value="5" required> Fantastic</label>
+  <label><input type="radio" name="rating" value="4"> Great</label>
+  <label><input type="radio" name="rating" value="3"> Good</label>
+  <label><input type="radio" name="rating" value="2"> Neutral</label>
+  <label><input type="radio" name="rating" value="1"> Bad</label>
+  <label><input type="radio" name="rating" value="0"> Horrible</label>
+
+  
+  <label> Feedback of Food Quality:
+    <textarea name="feedback" id="feedback1" rows="3"></textarea>
+  </label>
+    <button type="reset">Reset</button>
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+
+
+</script>
+
+</body>
+</html>
+
+  
