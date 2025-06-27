@@ -77,11 +77,11 @@
 </form>
 
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbydU6DBF2kr3_KUTvtD5xZ51y4fHMdKysPZ4aTxbBPS0WfiW-edeeKl_7tG89fOlHOfZg/exec'; // 
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxxwhpkGjo4l8Qd7IFKzTK5UXIdSnGSNF5UQ3P33qmOfkFZgT3zX5l2pTfTh_pGo_xTJA/exec';
   const form = document.getElementById('ChowkingForm');
 
   form.addEventListener('submit', e => {
-
+    
     const foodCheckboxes = document.querySelectorAll('input[name="food"]');
     const isFoodSelected = Array.from(foodCheckboxes).some(checkbox => checkbox.checked);
 
@@ -90,8 +90,8 @@
       e.preventDefault(); 
       return; 
     }
-    
-    e.preventDefault();
+
+    e.preventDefault(); 
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => {
         alert("Form submitted successfully!");
