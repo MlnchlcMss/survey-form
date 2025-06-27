@@ -81,6 +81,16 @@
   const form = document.getElementById('ChowkingForm');
 
   form.addEventListener('submit', e => {
+
+    const foodCheckboxes = document.querySelectorAll('input[name="food"]');
+    const isFoodSelected = Array.from(foodCheckboxes).some(checkbox => checkbox.checked);
+
+    if (!isFoodSelected) {
+      alert("Please select at least one food item.");
+      e.preventDefault(); 
+      return; 
+    }
+    
     e.preventDefault();
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => {
