@@ -1,105 +1,195 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Chowking Survey</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<h1> Chowking Dining Experience Survey </h1>
-<form id="ChowkingForm">
+<!-- saved from url=(0014)about:internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
 
-<fieldset>
-  <legend>Personal Info</legend>
+  <title>Simple Google Form</title> 
 
-  <label for="Fname">Full Name</label>
-  <input type="text" name="name" id="Fname" required>
+  <style> 
 
-  <label for="Age">Age</label>
-  <input type="number" name="age" id="Age" required>
+    body { 
 
-  <label for="Gender">Gender</label>
-  <select name="gender" id="Gender">
-    <option value="Male">Male</option>
-    <option value="Female">Female</option>
-    <option value="Other">Abstain</option>
-  </select>
+      font-family: Arial, sans-serif; 
 
-</fieldset>
+      background: #f9f9f9; 
 
- <fieldset>
-  <legend>Service Rating</legend>
+      padding: 20px; 
 
-  <label> How would you rate the services during your dining experience overall? (Cleaning, Counter, etc.) </label>
-  <label><input type="radio" name="rating_service" value="5" required> Fantastic</label>
-  <label><input type="radio" name="rating_service" value="4"> Great</label>
-  <label><input type="radio" name="rating_service" value="3"> Good</label>
-  <label><input type="radio" name="rating_service" value="2"> Neutral</label>
-  <label><input type="radio" name="rating_service" value="1"> Bad</label>
-  <label><input type="radio" name="rating_service" value="0"> Horrible</label>
+    } 
 
+    form { 
 
-  <label> Feedback of Service:
-    <textarea name="feedback_service" id="feedback1" rows="3"></textarea>
-  </label>
+      background: #fff; 
 
+      padding: 20px; 
 
-</fieldset>
+      max-width: 500px; 
 
-<fieldset>
+      margin: auto; 
 
-  <legend>Food Quality Rating</legend>
+      border-radius: 8px; 
 
-  <label>What items did you get during your dining experience? Or if you got any at all?</label>
-  <label><input type="checkbox" name="food" value="bm1"> Breakfast Meals</label>
-  <label><input type="checkbox" name="food" value="l1"> Lauriat</label>
-  <label><input type="checkbox" name="food" value="cf"> Chao Fan</label>
-  <label><input type="checkbox" name="food" value="fc1"> Fried Chicken</label>
-  <label><input type="checkbox" name="food" value="cs1"> Chef Specials</label>
-  <label><input type="checkbox" name="food" value="cr1"> Chinese Rice Meals</label>
-  <label><input type="checkbox" name="food" value="mp1"> Mami and Pancit</label>
-  <label><input type="checkbox" name="food" value="hhd1"> Halo Halo/Desserts</label>
+      box-shadow: 0 0 10px rgba(0,0,0,0.1); 
 
+    } 
 
-  <label>How would you rate the quality of the food served to you during your dining experience overall?</label>
-  <label><input type="radio" name="rating_food" value="5" required> Fantastic</label>
-  <label><input type="radio" name="rating_food" value="4"> Great</label>
-  <label><input type="radio" name="rating_food" value="3"> Good</label>
-  <label><input type="radio" name="rating_food" value="2"> Neutral</label>
-  <label><input type="radio" name="rating_food" value="1"> Bad</label>
-  <label><input type="radio" name="rating_food" value="0"> Horrible</label>
+    label { 
 
+      display: block; 
 
-  <label> Feedback of Food Quality:
-    <textarea name="feedback_food" id="feedback2" rows="3"></textarea>
-  </label>
-    <button type="reset">Reset</button>
-    <button type="submit">Submit</button>
-</form>
+      margin-top: 15px; 
 
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbz_8lOoHNiKMXjelD7cQcQKbHR6xESZhXuNO6aELG9Z_Xxji3KkxtxkaLm3uJ8N2WI/exec';
-  const form = document.getElementById('ChowkingForm');
+      font-weight: bold; 
 
-  form.addEventListener('submit', e => {
-    
-    const foodCheckboxes = document.querySelectorAll('input[name="food"]');
-    const isFoodSelected = Array.from(foodCheckboxes).some(checkbox => checkbox.checked);
+    } 
 
-    if (!isFoodSelected) {
-      alert("Please select at least one food item.");
-      e.preventDefault(); 
-      return; 
-    }
+    input[type="text"], 
 
-    e.preventDefault(); 
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => {
-        alert("Form submitted successfully!");
-        form.reset();
-      })
-      .catch(error => alert('Error!', error.message));
-  });
-</script>
+    select, 
 
-</body>
-</html>
+    textarea { 
+
+      width: 100%; 
+
+      padding: 8px; 
+
+      margin-top: 5px; 
+
+      border-radius: 4px; 
+
+      border: 1px solid #ccc; 
+
+      box-sizing: border-box; 
+
+    } 
+
+    fieldset { 
+
+      margin-top: 20px; 
+
+      padding: 10px; 
+
+      border-radius: 5px; 
+
+      border: 1px solid #ddd; 
+
+    } 
+
+    button { 
+
+      margin-top: 20px; 
+
+      padding: 10px 20px; 
+
+      background: #28a745; 
+
+      color: white; 
+
+      border: none; 
+
+      border-radius: 4px; 
+
+      cursor: pointer; 
+
+    } 
+
+    button:hover { 
+
+      background: #218838; 
+
+    } 
+
+  </style> 
+
+</head> 
+
+<body> 
+
+ 
+
+<form id="googleForm"> 
+
+  <label for="name">Name</label> 
+
+  <input type="text" name="name" id="name" required=""> 
+
+ 
+
+  <label for="gender">Gender</label> 
+
+  <select name="gender" id="gender"> 
+
+    <option value="Male">Male</option> 
+
+    <option value="Female">Female</option> 
+
+    <option value="Other">Other</option> 
+
+  </select> 
+
+ 
+
+  <fieldset> 
+
+    <legend>Age Group</legend> 
+
+    <label><input type="radio" name="ageGroup" value="Under 18"> Under 18</label> 
+
+    <label><input type="radio" name="ageGroup" value="18-30"> 18-30</label> 
+
+    <label><input type="radio" name="ageGroup" value="31-50"> 31-50</label> 
+
+    <label><input type="radio" name="ageGroup" value="51+"> 51+</label> 
+
+  </fieldset> 
+
+ 
+
+  <label for="comments">Comments</label> 
+
+  <textarea name="comments" id="comments" rows="4"></textarea> 
+
+ 
+
+  <button type="submit">Submit</button> 
+
+</form> 
+
+ 
+
+<script> 
+
+  const scriptURL = 'https://script.google.com/macros/s/AKfycby3AsCpg6VqD3vJ009jeFGxKnEuH9FKYGyqGz7zS2LyQkCk5roWRmj8HeoE0dLsBWTefQ/exec'; 
+
+  const form = document.getElementById('googleForm'); 
+
+ 
+
+//When the user clicks the submit button, this function runs. 
+
+  form.addEventListener('submit', e => { 
+
+    e.preventDefault(); //This stops the browser’s default action of reloading  
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)}) 
+
+      .then(response => { 
+
+        alert("Form submitted successfully!"); 
+
+        form.reset(); 
+
+      }) 
+
+      .catch(error => alert('Error!', error.message)); 
+
+  }); 
+
+</script> 
+
+ 
+
+ 
+
+ 
+
+ </body></html>
